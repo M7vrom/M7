@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kovix — Coffee • More</title>
+<style>
+  @font-face {
+    font-family: 'Canva Sans';
+    src: local('Canva Sans');
+  }
+
+  :root {
+    --bg: #808080;
+    --text: #5a6045;
+    --text-soft: #6b715a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    font-family: 'Canva Sans', 'Century Gothic', 'Poppins', Avenir, 'Segoe UI', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 5vh 6vw;
+  }
+
+  .hero-inner {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* ---- Left column: text ---- */
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em; /* compensate for trailing letter-spacing */
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .logo-sub {
+    margin-top: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-indent: 0.35em;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .eyebrow-row {
+    margin-top: 5.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
+    color: var(--text);
+  }
+
+  .eyebrow.small {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-indent: 0.22em;
+    color: var(--text-soft);
+    font-weight: 600;
+  }
+
+  .headline {
+    margin-top: 0.4rem;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 600;
+    line-height: 1.02;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    margin-top: 1.6rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    max-width: 26ch;
+    line-height: 1.6;
+  }
+
+  .divider {
+    margin-top: 3rem;
+    width: 48px;
+    height: 1px;
+    background: var(--text);
+    opacity: 0.55;
+  }
+
+  /* ---- Right column: image ---- */
+  .visual {
+    position: relative;
+    height: 78vh;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .cup-img {
+    position: relative;
+    z-index: 1;
+    width: 46%;
+    max-width: 340px;
+    height: auto;
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.28));
+  }
+
+  .splash-img {
+    position: absolute;
+    z-index: 2;
+    width: 78%;
+    max-width: 620px;
+    left: 50%;
+    top: 8%;
+    transform: translateX(-50%);
+    height: auto;
+    pointer-events: none;
+  }
+
+  .ground-shadow {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 28px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0) 72%);
+    z-index: 0;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 900px) {
+    .hero { padding: 4rem 6vw 3rem; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: left;
+    }
+    .visual {
+      order: -1;
+      height: 52vh;
+      min-height: 340px;
+      margin-bottom: 1rem;
+    }
+    .eyebrow-row { margin-top: 3rem; }
+    .cup-img { max-width: 220px; }
+    .splash-img { max-width: 420px; }
+  }
+
+  @media (max-width: 480px) {
+    .logo { letter-spacing: 0.32em; text-indent: 0.32em; }
+    .headline { font-size: 2.6rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="content">
+        <div class="logo">KOVIX</div>
+        <div class="logo-sub">COFFEE &nbsp;•&nbsp; MORE</div>
+
+        <div class="eyebrow-row">
+          <span class="eyebrow">GOOD COFFEE</span>
+          <span class="eyebrow small">GOOD COFFEE</span>
+        </div>
+        <h1 class="headline">Better<br>Moments</h1>
+
+        <p class="tagline">Rich flavor. Real energy.<br>Only at Kovix.</p>
+
+        <div class="divider"></div>
+      </div>
+
+      <div class="visual">
+        <div class="ground-shadow"></div>
+        <img class="cup-img" src="images/cup.png" alt="Kovix iced coffee">
+        <img class="splash-img" src="images/splash.png" alt="Coffee splash with ice">
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
